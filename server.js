@@ -11,6 +11,8 @@ app.use(morgan('dev'))
 app.use(helmet())
 app.use(cors())
 
+
+//make sure we have the API token in place
 app.use(function validateBearerToken(req, res, next) {
   const apiToken = process.env.API_TOKEN
   const authToken = req.get('Authorization')
